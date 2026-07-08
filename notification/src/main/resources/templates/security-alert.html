@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Security Alert</title>
+</head>
+<body>
+
+<p>Hello,</p>
+
+<p>
+    This is a security alert to inform you that the email address associated with your account has been successfully
+    changed.
+</p>
+
+<p>
+    <b>Previous email:</b><br/>
+    <span th:text="${oldMail}"></span>
+</p>
+
+<p>
+    <b>New email:</b><br/>
+    <span th:text="${newMail}"></span>
+</p>
+
+<p>
+    If you made this change, no further action is required.
+</p>
+
+<p>
+    If you did NOT perform this action, please secure your account immediately by:
+</p>
+
+<ul>
+    <li>Resetting your password</li>
+    <li>Reviewing recent account activity</li>
+    <li>Contacting support immediately</li>
+</ul>
+
+<p>
+    If this change was unauthorized, your account may be compromised.
+</p>
+
+<p>Regards,<br/>Security Team</p>
+
+</body>
+</html>

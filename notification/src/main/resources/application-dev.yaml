@@ -1,0 +1,135 @@
+spring:
+  application:
+    name: notification
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    connection-timeout: 5s
+  cloud:
+    function:
+      definition: >
+        registrationConsumer;
+        welcomeUserConsumer;
+        passwordChangeConsumer;
+        verifyEmailConsumer;
+        emailChangeConsumer;
+        securityAlertConsumer
+    stream:
+      default:
+        content-type: application/json
+      bindings:
+        registrationConsumer-in-0:
+          destination: otp.registration.requested
+          group: notification-group
+          consumer:
+            maxAttempts: 5
+            backOffInitialInterval: 2000
+            backOffMaxInterval: 30000
+            backOffMultiplier: 2.0
+        welcomeUserConsumer-in-0:
+          destination: notification.email.welcome
+          group: notification-group
+          consumer:
+            maxAttempts: 5
+            backOffInitialInterval: 2000
+            backOffMaxInterval: 30000
+            backOffMultiplier: 2.0
+        passwordChangeConsumer-in-0:
+          destination: otp.password.change.requested
+          group: notification-group
+          consumer:
+            maxAttempts: 5
+            backOffInitialInterval: 2000
+            backOffMaxInterval: 30000
+            backOffMultiplier: 2.0
+        verifyEmailConsumer-in-0:
+          destination: otp.email.verify.requested
+          group: notification-group
+          consumer:
+            maxAttempts: 5
+            backOffInitialInterval: 2000
+            backOffMaxInterval: 30000
+            backOffMultiplier: 2.0
+        emailChangeConsumer-in-0:
+          destination: otp.email.change.requested
+          group: notification-group
+          consumer:
+            maxAttempts: 5
+            backOffInitialInterval: 2000
+            backOffMaxInterval: 30000
+            backOffMultiplier: 2.0
+        securityAlertConsumer-in-0:
+          destination: notification.email.change.alert
+          group: notification-group
+          consumer:
+            maxAttempts: 5
+            backOffInitialInterval: 2000
+            backOffMaxInterval: 30000
+            backOffMultiplier: 2.0
+      rabbit:
+        bindings:
+          registrationConsumer-in-0:
+            consumer:
+              autoBindDlq: true
+              republishToDlq: true
+              requeueRejected: false
+              deadLetterQueueName: otp.registration.requested.dlq
+          welcomeUserConsumer-in-0:
+            consumer:
+              autoBindDlq: true
+              republishToDlq: true
+              requeueRejected: false
+              deadLetterQueueName: notification.email.welcome.dlq
+          passwordChangeConsumer-in-0:
+            consumer:
+              autoBindDlq: true
+              republishToDlq: true
+              requeueRejected: false
+              deadLetterQueueName: otp.password.change.requested.dlq
+          verifyEmailConsumer-in-0:
+            consumer:
+              autoBindDlq: true
+              republishToDlq: true
+              requeueRejected: false
+              deadLetterQueueName: otp.email.verify.requested.dlq
+          emailChangeConsumer-in-0:
+            consumer:
+              autoBindDlq: true
+              republishToDlq: true
+              requeueRejected: false
+              deadLetterQueueName: otp.email.change.requested.dlq
+          securityAlertConsumer-in-0:
+            consumer:
+              autoBindDlq: true
+              republishToDlq: true
+              requeueRejected: false
+              deadLetterQueueName: notification.email.change.alert.dlq
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: pranitbhangale1453@gmail.com
+    password:
+    protocol: smtp
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+    cache: false
+mail:
+  from: pranitbhangale1453@gmail.com
+
+server:
+  port: 9090
+
