@@ -1,37 +1,89 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome</title>
+    <title>Welcome to Security Service</title>
 </head>
-<body style="font-family: Arial, sans-serif; line-height: 1.6;">
 
-<h2>Welcome, <span th:text="${username}">User</span> 🎉</h2>
+<body style="margin:0;padding:0;background-color:#f4f4f4;font-family:Arial,Helvetica,sans-serif;">
 
-<p>
-    Hi <b th:text="${username}"></b>,
-</p>
+<table cellpadding="0" cellspacing="0" role="presentation" style="background-color:#f4f4f4;padding:30px 0;"
+       width="100%">
+    <tr>
+        <td align="center">
 
-<p>
-    We're excited to have you on board!
-</p>
+            <table cellpadding="0" cellspacing="0" role="presentation" style="background:#ffffff;padding:40px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.08);"
+                   width="600">
 
-<p>
-    Your account has been successfully created with:
-</p>
+                <tr>
+                    <td>
 
-<ul>
-    <li><b>Username:</b> <span th:text="${username}"></span></li>
-    <li><b>Email:</b> <span th:text="${email}"></span></li>
-</ul>
+                        <h2 style="margin-top:0;color:#333333;">
+                            Welcome, <span th:text="${username}">User</span> 🎉
+                        </h2>
 
-<p>
-    You can now log in and start exploring the platform.
-</p>
+                        <p style="color:#555555;font-size:15px;line-height:1.6;">
+                            Hi <strong th:text="${username}">User</strong>,
+                        </p>
 
-<br/>
+                        <p style="color:#555555;font-size:15px;line-height:1.6;">
+                            Welcome to <strong>Security Service</strong>! We're excited to have you join our community.
+                            Your account has been created successfully and is now ready to use.
+                        </p>
 
-<p>Best Regards,<br/>Security Service Team</p>
+                        <table cellpadding="10" cellspacing="0" role="presentation" style="background:#f8f9fa;border:1px solid #e5e5e5;border-radius:6px;margin:25px 0;"
+                               width="100%">
+
+                            <tr>
+                                <td style="font-weight:bold;color:#333333;width:150px;">
+                                    Username
+                                </td>
+                                <td style="color:#555555;" th:text="${username}">
+                                    johndoe
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="font-weight:bold;color:#333333;">
+                                    Email
+                                </td>
+                                <td style="color:#555555;" th:text="${email}">
+                                    john@example.com
+                                </td>
+                            </tr>
+
+                        </table>
+
+                        <p style="color:#555555;font-size:15px;line-height:1.6;">
+                            You can now sign in and start exploring all the features available to you.
+                        </p>
+
+                        <p style="color:#555555;font-size:15px;">
+                            For your security:
+                        </p>
+
+                        <ul style="color:#555555;font-size:15px;line-height:1.8;">
+                            <li>Keep your password secure and do not share it with anyone.</li>
+                            <li>Enable additional security features when available.</li>
+                            <li>Contact support if you notice any suspicious activity.</li>
+                        </ul>
+
+                        <hr style="border:none;border-top:1px solid #eeeeee;margin:30px 0;">
+
+                        <p style="color:#777777;font-size:14px;margin-bottom:0;">
+                            Thank you for choosing us!<br><br>
+                            Best Regards,<br>
+                            <strong>Security Service Team</strong>
+                        </p>
+
+                    </td>
+                </tr>
+
+            </table>
+
+        </td>
+    </tr>
+</table>
 
 </body>
 </html>

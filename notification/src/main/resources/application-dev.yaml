@@ -2,10 +2,10 @@ spring:
   application:
     name: notification
   rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
+    host: ${RABBITMQHOST}
+    port: ${RABBITMQPORT}
+    username: ${RABBITMQUSERNAME}
+    password: ${RABBITMQPASSWORD}
     connection-timeout: 5s
   cloud:
     function:
@@ -109,8 +109,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: pranitbhangale1453@gmail.com
-    password:
+    username: ${MAILUSERNAME}
+    password: ${MAILPASSWORD}
     protocol: smtp
     properties:
       mail:
@@ -128,7 +128,7 @@ spring:
     encoding: UTF-8
     cache: false
 mail:
-  from: pranitbhangale1453@gmail.com
+  from: ${MAILFROM}
 
 server:
   port: 9090

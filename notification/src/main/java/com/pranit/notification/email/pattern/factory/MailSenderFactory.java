@@ -10,9 +10,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-@Component
 @Slf4j
-public class MailSenderFactory {
+@Component
+public final class MailSenderFactory {
     private final Map<MailType, MailSender> senderFactory;
 
     public MailSenderFactory(List<MailSender> mailSenders) {

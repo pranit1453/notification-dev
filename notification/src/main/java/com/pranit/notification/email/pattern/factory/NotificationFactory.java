@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 
 @Slf4j
 @Component
-public class NotificationFactory {
+public final class NotificationFactory {
 
     private final Map<NotificationCode, NotificationHandler<?>> notificationFactory;
 

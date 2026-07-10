@@ -17,7 +17,7 @@ import java.util.Map;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class MimeRegistrationOtpEventHandler implements NotificationHandler<OtpEvent> {
+public final class MimeRegistrationOtpEventHandler implements NotificationHandler<OtpEvent> {
 
     private final static NotificationCode CODE = NotificationCode.REGISTRATION_OTP;
     private final MailSenderFactory mailSenderFactory;

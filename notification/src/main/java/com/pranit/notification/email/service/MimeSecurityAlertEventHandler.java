@@ -17,7 +17,7 @@ import java.util.Map;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class MimeSecurityAlertEventHandler implements NotificationHandler<SecurityEvent> {
+public final class MimeSecurityAlertEventHandler implements NotificationHandler<SecurityEvent> {
 
     private final static NotificationCode CODE = NotificationCode.SECURITY_ALERT;
     private final MailSenderFactory mailSenderFactory;

@@ -20,7 +20,7 @@ import org.thymeleaf.context.Context;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class MimeMailSenderImpl implements MailSender {
+public final class MimeMailSenderImpl implements MailSender {
 
     private final JavaMailSender javaMailSender;
     private final TemplateEngine templateEngine;
@@ -36,7 +36,7 @@ public class MimeMailSenderImpl implements MailSender {
             MimeMessageHelper helper = getMimeMessageHelper(request, message);
 
             if (request.getAttachments() != null
-                && !request.getAttachments().isEmpty()) {
+                    && !request.getAttachments().isEmpty()) {
                 for (Attachment attachment : request.getAttachments()) {
                     helper.addAttachment(
                             attachment.fileName(),

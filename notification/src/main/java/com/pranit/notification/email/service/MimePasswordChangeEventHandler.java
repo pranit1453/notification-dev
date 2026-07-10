@@ -16,7 +16,7 @@ import java.util.Map;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class MimePasswordChangeEventHandler implements NotificationHandler<OtpEvent> {
+public final class MimePasswordChangeEventHandler implements NotificationHandler<OtpEvent> {
 
     private final static NotificationCode CODE = NotificationCode.PASSWORD_CHANGE_OTP;
     private final MailSenderFactory mailSenderFactory;

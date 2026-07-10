@@ -1,47 +1,92 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Security Alert</title>
+    <title>Email Address Changed</title>
 </head>
-<body>
 
-<p>Hello,</p>
+<body style="margin:0;padding:0;background-color:#f4f4f4;font-family:Arial,Helvetica,sans-serif;">
 
-<p>
-    This is a security alert to inform you that the email address associated with your account has been successfully
-    changed.
-</p>
+<table cellpadding="0" cellspacing="0" role="presentation" style="background-color:#f4f4f4;padding:30px 0;"
+       width="100%">
+    <tr>
+        <td align="center">
 
-<p>
-    <b>Previous email:</b><br/>
-    <span th:text="${oldMail}"></span>
-</p>
+            <table cellpadding="0" cellspacing="0" role="presentation" style="background:#ffffff;padding:40px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.08);"
+                   width="600">
 
-<p>
-    <b>New email:</b><br/>
-    <span th:text="${newMail}"></span>
-</p>
+                <tr>
+                    <td>
 
-<p>
-    If you made this change, no further action is required.
-</p>
+                        <h2 style="margin-top:0;color:#333333;">
+                            Email Address Updated
+                        </h2>
 
-<p>
-    If you did NOT perform this action, please secure your account immediately by:
-</p>
+                        <p style="color:#555555;font-size:15px;line-height:1.6;">
+                            Hello,
+                        </p>
 
-<ul>
-    <li>Resetting your password</li>
-    <li>Reviewing recent account activity</li>
-    <li>Contacting support immediately</li>
-</ul>
+                        <p style="color:#555555;font-size:15px;line-height:1.6;">
+                            This is a confirmation that the email address associated with your account has been
+                            successfully updated.
+                        </p>
 
-<p>
-    If this change was unauthorized, your account may be compromised.
-</p>
+                        <table cellpadding="10" cellspacing="0" role="presentation" style="background:#f8f9fa;border:1px solid #e5e5e5;border-radius:6px;margin:25px 0;"
+                               width="100%">
 
-<p>Regards,<br/>Security Team</p>
+                            <tr>
+                                <td style="font-weight:bold;color:#333333;width:180px;">
+                                    Previous Email
+                                </td>
+                                <td style="color:#555555;" th:text="${oldMail}">
+                                    old@example.com
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="font-weight:bold;color:#333333;">
+                                    New Email
+                                </td>
+                                <td style="color:#555555;" th:text="${newMail}">
+                                    new@example.com
+                                </td>
+                            </tr>
+
+                        </table>
+
+                        <p style="color:#555555;font-size:15px;line-height:1.6;">
+                            If you made this change, no further action is required.
+                        </p>
+
+                        <p style="color:#555555;font-size:15px;">
+                            <strong>If you did not authorize this change:</strong>
+                        </p>
+
+                        <ul style="color:#555555;font-size:15px;line-height:1.8;">
+                            <li>Change your account password immediately.</li>
+                            <li>Review your recent account activity.</li>
+                            <li>Contact our support team as soon as possible.</li>
+                        </ul>
+
+                        <p style="color:#d9534f;font-size:15px;line-height:1.6;">
+                            If this change was not made by you, your account may have been compromised.
+                        </p>
+
+                        <hr style="border:none;border-top:1px solid #eeeeee;margin:30px 0;">
+
+                        <p style="color:#777777;font-size:14px;margin-bottom:0;">
+                            Regards,<br>
+                            <strong>Security Service Team</strong>
+                        </p>
+
+                    </td>
+                </tr>
+
+            </table>
+
+        </td>
+    </tr>
+</table>
 
 </body>
 </html>

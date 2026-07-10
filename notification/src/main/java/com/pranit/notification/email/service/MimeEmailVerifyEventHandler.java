@@ -16,7 +16,7 @@ import java.util.Map;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class MimeEmailVerifyEventHandler implements NotificationHandler<OtpEvent> {
+public final class MimeEmailVerifyEventHandler implements NotificationHandler<OtpEvent> {
 
     private final static NotificationCode CODE = NotificationCode.EMAIL_VERIFY_OTP;
     private final MailSenderFactory mailSenderFactory;
@@ -45,5 +45,5 @@ public class MimeEmailVerifyEventHandler implements NotificationHandler<OtpEvent
     public NotificationCode getNotificationCode() {
         return CODE;
     }
-    
+
 }

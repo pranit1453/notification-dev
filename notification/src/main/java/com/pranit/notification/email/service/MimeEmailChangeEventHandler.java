@@ -16,7 +16,7 @@ import java.util.Map;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class MimeEmailChangeEventHandler implements NotificationHandler<OtpEvent> {
+public final class MimeEmailChangeEventHandler implements NotificationHandler<OtpEvent> {
 
     private final static NotificationCode CODE = NotificationCode.EMAIL_CHANGE_OTP;
     private final MailSenderFactory mailSenderFactory;
