@@ -1,4 +1,4 @@
-package com.pranit.notification.email.mask;
+package com.pranit.notification.email.helper;
 
 
 public final class MaskData {

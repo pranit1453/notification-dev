@@ -1,8 +1,8 @@
-package com.pranit.notification.email.pattern.factory;
+package com.pranit.notification.email.factory;
 
 import com.pranit.notification.email.enums.MailType;
 import com.pranit.notification.email.exception.SenderNotFound;
-import com.pranit.notification.email.pattern.stratergy.mail.MailSender;
+import com.pranit.notification.email.strategy.mail.MailSender;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 

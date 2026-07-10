@@ -5,7 +5,7 @@ import com.pranit.notification.email.enums.NotificationCode;
 import com.pranit.notification.email.event.OtpEvent;
 import com.pranit.notification.email.event.SecurityEvent;
 import com.pranit.notification.email.event.WelcomeEvent;
-import com.pranit.notification.email.pattern.factory.NotificationFactory;
+import com.pranit.notification.email.factory.NotificationFactory;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;

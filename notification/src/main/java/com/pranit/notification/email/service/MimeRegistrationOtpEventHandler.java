@@ -5,8 +5,8 @@ import com.pranit.notification.email.enums.MailType;
 import com.pranit.notification.email.enums.NotificationCode;
 import com.pranit.notification.email.event.OtpEvent;
 import com.pranit.notification.email.mail.MailRequest;
-import com.pranit.notification.email.pattern.factory.MailSenderFactory;
-import com.pranit.notification.email.pattern.stratergy.notification.NotificationHandler;
+import com.pranit.notification.email.factory.MailSenderFactory;
+import com.pranit.notification.email.strategy.notification.NotificationHandler;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -33,7 +33,7 @@ public final class MimeRegistrationOtpEventHandler implements NotificationHandle
         Map<String, Object> vars = new LinkedHashMap<>();
         vars.put("otp", data.otp());
         vars.put("email", data.email());
-        vars.put("expiry", "5 minutes");
+        vars.put("expiresIn", data.expiresAt());
 
         MailRequest request = MailRequest.builder()
                 .to(data.email())

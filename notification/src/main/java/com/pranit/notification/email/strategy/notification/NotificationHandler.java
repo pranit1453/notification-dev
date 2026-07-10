@@ -1,4 +1,4 @@
-package com.pranit.notification.email.pattern.stratergy.notification;
+package com.pranit.notification.email.strategy.notification;
 
 import com.pranit.notification.email.enums.MailType;
 import com.pranit.notification.email.enums.NotificationCode;

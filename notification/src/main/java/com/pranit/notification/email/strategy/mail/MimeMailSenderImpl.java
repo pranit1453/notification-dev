@@ -1,4 +1,4 @@
-package com.pranit.notification.email.pattern.stratergy.mail;
+package com.pranit.notification.email.strategy.mail;
 
 import com.pranit.notification.email.enums.MailType;
 import com.pranit.notification.email.exception.MailNotSent;
